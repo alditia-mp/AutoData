@@ -1,0 +1,7 @@
+.bob/
+.env
+*.env
+config.bat
+~$*
+.DS_Store
+Thumbs.db

@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "langflow": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "lfx",
+        "lfx-mcp"
+      ],
+      "env": {
+        "LANGFLOW_SERVER_URL": "http://localhost:7860",
+        "LANGFLOW_API_KEY": "ISI_API_KEY_LANGFLOW_KAMU"
+      }
+    },
+    "lf-ibm_project": {
+      "command": "uvx",
+      "args": [
+        "--with",
+        "mcp<2.0.0",
+        "mcp-proxy",
+        "--transport",
+        "streamablehttp",
+        "--headers",
+        "x-api-key",
+        "ISI_API_KEY_IBM_BOB_KAMU",
+        "http://localhost:7860/api/v1/mcp/project/ISI_PROJECT_ID_KAMU/streamable"
+      ],
+      "alwaysAllow": [
+        "autodata_hackaton"
+      ]
+    }
+  }
+}
